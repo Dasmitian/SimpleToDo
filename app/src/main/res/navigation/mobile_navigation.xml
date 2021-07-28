@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.dasmitian.simpletodo.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.dasmitian.simpletodo.ui.tasks.TasksFragment"
+        android:label="@string/title_tasks"
+        tools:layout="@layout/fragment_tasks" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.dasmitian.simpletodo.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_new_task"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_single_sub_task"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="30dp"
+    android:paddingEnd="10dp">
+
+    <TextView
+        android:id="@+id/tvSubTaskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sample"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvSubtaskCreatedDate"/>
+    <TextView
+        android:id="@+id/tvSubtaskCreatedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTaskName" />
+    <TextView
+        android:id="@+id/tvSubtaskDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTaskName"/>
+    <TextView
+        android:id="@+id/tvSubtaskProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtaskDueDate"/>
+
+    <View
+        android:id="@+id/subTaskDivider"
+        style="@style/Divider"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtaskProgress"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

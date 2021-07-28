@@ -1,0 +1,54 @@
+[
+  {
+    "taskName": "Napisz apkę",
+    "taskCreated": "21.05.2021",
+    "taskDue": "01.06.2021",
+    "taskStatus": "In progress",
+    "subtaskList": [
+      {
+        "subTaskName": "Projekt bazy 1",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "Completed"
+      },
+      {
+        "subTaskName": "Projekt bazy 1",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "Completed"
+      },
+      {
+        "subTaskName": "Projekt bazy 1",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "In progress"
+      }
+    ]
+  },
+  {
+    "taskName": "Napisz apkę 2",
+    "taskCreated": "21.05.2021",
+    "taskDue": "01.06.2021",
+    "taskStatus": "In progress",
+    "subtaskList": [
+      {
+        "subTaskName": "Projekt bazy 2",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "Completed"
+      },
+      {
+        "subTaskName": "Projekt bazy 2",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "Completed"
+      },
+      {
+        "subTaskName": "Projekt bazy 2",
+        "subTaskCreated": "21.05.2021",
+        "subTaskDue": "01.06.2021",
+        "subTaskStatus": "In progress"
+      }
+    ]
+  }
+]

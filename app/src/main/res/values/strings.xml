@@ -1,6 +1,25 @@
 <resources>
     <string name="app_name">SimpleToDo</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_tasks">Tasks</string>
+    <string name="title_new_task">New task</string>
     <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- JSON properties -->
+    <string name="tasks">tasks</string>
+    <string name="name">name</string>
+    <string name="created">created</string>
+    <string name="due">due</string>
+    <string name="status">status</string>
+    <string name="subtasks">subtasks</string>
+    <string name="subtaskName">subtaskName</string>
+    <string name="subtaskCreated">subtaskCreated</string>
+    <string name="subtaskDue">subtaskDue</string>
+    <string name="subtaskStatus">subtaskStatus</string>
+    <string name="completed">Completed</string>
+    <string name="inProgress">In progress</string>
+    <string name="progress">Progress</string>
+    <string name="actions">Actions</string>
+
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_single_task"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- TODO: Change Left and Right to End and Start -->
+
+    <TextView
+        android:id="@+id/tvTaskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample text"
+        app:layout_constraintBottom_toTopOf="@id/tvCreatedDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCreatedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/pbTaskProgress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskName"/>
+
+    <TextView
+        android:id="@+id/tvDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/pbTaskProgress"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskName"/>
+
+    <TextView
+        android:id="@+id/tvProgressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/pbTaskProgress"
+        app:layout_constraintTop_toBottomOf="@id/tvDueDate"
+        />
+
+    <ProgressBar
+        android:id="@+id/pbTaskProgress"
+        style="@style/CustomProgressBarHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleY="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvProgressText"
+        app:layout_constraintTop_toBottomOf="@id/tvCreatedDate"
+        />
+
+    <TextView
+        android:id="@+id/tvProgressBarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        app:layout_constraintLeft_toLeftOf="@id/pbTaskProgress"
+        app:layout_constraintRight_toRightOf="@id/pbTaskProgress"
+        app:layout_constraintTop_toTopOf="@id/pbTaskProgress"/>
+
+
+    <com.dasmitian.simpletodo.CustomExpandableListView
+        android:id="@+id/subtasks_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintLeft_toLeftOf="@id/layout_single_task"
+        app:layout_constraintRight_toRightOf="@id/layout_single_task"
+        app:layout_constraintTop_toBottomOf="@+id/pbTaskProgress">
+    </com.dasmitian.simpletodo.CustomExpandableListView>
+
+    <TextView
+        android:id="@+id/tvProgressTextNoSubTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtasks_list"
+        app:layout_constraintBottom_toTopOf="@id/taskDivider"
+        />
+
+    <View
+        android:id="@+id/taskDivider"
+        style="@style/Divider"
+        app:layout_constraintTop_toBottomOf="@id/tvProgressTextNoSubTasks"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,10 +31,12 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
     private String listTitle = "Subtasks";
     private Context context;
     private List<SingleSubTask> subtaskList;
+    private TasksList tasksList;
 
     public TaskExpandableListAdapter(Context context, List<SingleSubTask> subtaskList){
         this.context = context;
         this.subtaskList = subtaskList;
+        tasksList = TasksList.getInstance();
     }
 
     @Override
@@ -101,7 +103,7 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
             @Override
             public boolean onLongClick(View view) {
                 view.setBackgroundColor(Color.LTGRAY);
-                    Dialog menuDialogNoSubtasks = showDialogNoSubtasks(view, progress, getChild(listPosition, expandedListPosition));
+                    Dialog menuDialogNoSubtasks = showDialogSubtasks(view, progress, getChild(listPosition, expandedListPosition));
                     menuDialogNoSubtasks.setOnCancelListener(new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialogInterface) {
@@ -121,7 +123,7 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
         return false;
     }
 
-    private Dialog showDialogNoSubtasks(View view, TextView progress, SingleSubTask child){
+    private Dialog showDialogSubtasks(View view, TextView progress, SingleSubTask child){
         String[] menuItems = {"Mark as completed", "Mark as in progress", "Edit", "Delete"};
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(context.getResources().getString(R.string.actions));
@@ -132,8 +134,22 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
                 switch (position){
                     case 0: progress.setText(context.getResources().getString(R.string.completed));
                             child.setSubTaskStatus(context.getResources().getString(R.string.completed));
+                            try {
+                                tasksList.writeToJson(context.getApplicationInfo().dataDir + "/tasks.json");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            notifyDataSetChanged();
+
                         break;
                     case 1: progress.setText(context.getResources().getString(R.string.inProgress));
+                            child.setSubTaskStatus(context.getResources().getString(R.string.inProgress));
+                            try {
+                                tasksList.writeToJson(context.getApplicationInfo().dataDir + "/tasks.json");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            notifyDataSetChanged();
                         break;
                     case 2:
                         break;
@@ -143,9 +159,5 @@ public class TaskExpandableListAdapter extends BaseExpandableListAdapter {
             }
         });
         return builder.create();
-    }
-
-    private void testUpdateJson(){
-
     }
 }

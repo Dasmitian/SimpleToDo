@@ -33,8 +33,7 @@ public class TasksViewModel extends AndroidViewModel {
     public TasksViewModel(Application application) throws FileNotFoundException {
         super(application);
 
-        TasksList tasksList = TasksList.getInstance();
-        tasksList.loadTasksFromFile(application.getApplicationInfo().dataDir + "/tasks.json");
+        TasksList tasksList = TasksList.getInstance(application.getApplicationInfo().dataDir + "/tasks.json");
         tasksListData.setValue(tasksList.getTasksList());
     }
 

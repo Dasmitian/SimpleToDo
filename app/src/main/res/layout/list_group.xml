@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TODO: move SingleTask progress bar here to check if updating is possible by calling parent view -->
+
     <TextView
         android:id="@+id/listTitle"
         android:layout_width="match_parent"

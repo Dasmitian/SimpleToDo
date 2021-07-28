@@ -38,7 +38,7 @@ public class TasksFragment extends Fragment {
         TextView tvTaskCreated;
         TextView tvTaskDue;
         ExpandableListView expandableListView;
-        ProgressBar bpTaskProgress;
+        ProgressBar pbTaskProgress;
         TextView tvProgressBarText;
         TextView tvProgressText;
         TextView tvProgressTextNoSubTasks;
@@ -67,7 +67,7 @@ public class TasksFragment extends Fragment {
                 viewHolder.tvTaskName = taskView.findViewById(R.id.tvTaskName);
                 viewHolder.tvTaskCreated = taskView.findViewById(R.id.tvCreatedDate);
                 viewHolder.tvTaskDue = taskView.findViewById(R.id.tvDueDate);
-                viewHolder.bpTaskProgress = taskView.findViewById(R.id.pbTaskProgress);
+                viewHolder.pbTaskProgress = taskView.findViewById(R.id.pbTaskProgress);
                 viewHolder.tvProgressBarText = taskView.findViewById(R.id.tvProgressBarText);
                 viewHolder.expandableListView = taskView.findViewById(R.id.subtasks_list);
                 viewHolder.tvProgressText = taskView.findViewById(R.id.tvProgressText);
@@ -78,7 +78,7 @@ public class TasksFragment extends Fragment {
                     int completedSubTasksCount = taskList.get(i).getCompletedSubtasksCount();
                     String progressBarText = completedSubTasksCount + "/" + subTasksCount;
 
-                    viewHolder.bpTaskProgress.setProgress(completedSubTasksCount*100/subTasksCount);
+                    viewHolder.pbTaskProgress.setProgress(completedSubTasksCount*100/subTasksCount);
                     viewHolder.tvProgressBarText.setText(progressBarText);
                     viewHolder.expandableListView.setAdapter(new TaskExpandableListAdapter(getContext(), taskList.get(i).getSubtaskList()));
                     if(completedSubTasksCount == subTasksCount){
@@ -88,7 +88,7 @@ public class TasksFragment extends Fragment {
                     }
                     viewHolder.tvProgressTextNoSubTasks.setVisibility(View.GONE);
                 } else {
-                    viewHolder.bpTaskProgress.setVisibility(View.GONE);
+                    viewHolder.pbTaskProgress.setVisibility(View.GONE);
                     viewHolder.tvProgressBarText.setVisibility(View.GONE);
                     viewHolder.expandableListView.setVisibility(View.GONE);
                     viewHolder.tvProgressText.setVisibility(View.GONE);
